@@ -1,6 +1,7 @@
-import { Theme } from 'styled-components';
+import { DefaultTheme } from 'styled-components';
+import { rgba } from 'polished';
 
-export const theme: Theme = {
+export const theme: DefaultTheme = {
   colors: {
     black: '#000',
     white: '#FFF',
@@ -8,8 +9,8 @@ export const theme: Theme = {
     orange: 'FDCC0D',
   },
   devices: {
-    phone: '576px',
-    tablet: '768px',
-    desktop: '992px',
+    tablet: '@media (min-width: 768px)',
+    desktop: '@media (min-width: 1024px)',
+    bigDesktop: '@media (min-width: 1280px)',
   },
 };
