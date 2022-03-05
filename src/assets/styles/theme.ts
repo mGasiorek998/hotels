@@ -1,12 +1,11 @@
 import { DefaultTheme } from 'styled-components';
-import { rgba } from 'polished';
 
 export const theme: DefaultTheme = {
   colors: {
     black: '#000',
     white: '#FFF',
     lightGrey: '#C7C7C7',
-    orange: 'FDCC0D',
+    orange: '#FDCC0D',
   },
   devices: {
     tablet: '@media (min-width: 768px)',

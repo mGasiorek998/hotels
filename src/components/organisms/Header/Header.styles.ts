@@ -3,7 +3,7 @@ import { rgba } from 'polished';
 
 export const StyledHeader = styled.header`
   position: relative;
-  height: 30vh;
+  height: 500px;
 `;
 
 export const StyledImage = styled.img`
@@ -11,7 +11,7 @@ export const StyledImage = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: 100% 50%;
+  object-position: 50% 50%;
   z-index: -1;
 
   ${({ theme }) => theme.devices.desktop} {
@@ -28,4 +28,17 @@ export const Overlay = styled.div`
     transparent,
     ${({ theme }) => rgba(theme.colors.black, 0.4)}
   );
+`;
+
+export const FiltersSection = styled.section`
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  bottom: -5%;
+  transform: translate(-50%, -5%);
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: 0 1px 10px 1px ${({ theme }) => rgba(theme.colors.black, 0.4)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
