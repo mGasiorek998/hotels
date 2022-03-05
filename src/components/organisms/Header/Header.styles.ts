@@ -31,7 +31,7 @@ export const Overlay = styled.div`
 `;
 
 export const FiltersSection = styled.section`
-  height: 50px;
+  min-height: 50px;
   position: absolute;
   left: 50%;
   bottom: -5%;
@@ -39,6 +39,6 @@ export const FiltersSection = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 1px 10px 1px ${({ theme }) => rgba(theme.colors.black, 0.4)};
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 `;

@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { FiltersState } from './filters.d';
+import { FiltersEnum, FiltersState } from './filters.types';
 
 const initialState: FiltersState = {
-  stars: -1,
-  adults: -1,
-  kids: -1,
+  stars: 0,
+  adults: 0,
+  kids: 0,
 };
 
 // Slice
@@ -14,7 +14,7 @@ export const filtersSlice = createSlice({
   reducers: {
     apply: (
       state,
-      action: PayloadAction<{ filter: string; value: number }>
+      action: PayloadAction<{ filter: FiltersEnum; value: number }>
     ) => ({ ...state, [action.payload.filter]: action.payload.value }),
   },
 });
