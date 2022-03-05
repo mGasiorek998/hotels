@@ -9,6 +9,13 @@ declare module 'styled-components' {
       orange: string;
     };
 
+    fontSizes: {
+      xl: string;
+      l: string;
+      m: string;
+      s: string;
+    };
+
     devices: {
       tablet: string;
       desktop: string;
