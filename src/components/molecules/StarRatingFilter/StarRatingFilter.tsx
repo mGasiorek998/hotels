@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { applyFilter } from 'redux/slices/filtersSlice';
 import Star from 'components/atoms/Star/Star';
 import { Wrapper } from './StarRatingFilter.styles';
-import { FiltersEnum } from 'redux/slices/filters.d';
+import { FiltersEnum } from 'redux/slices/filters.types';
 
 const StarRatingFilter = () => {
   const [starsHovered, setStarsHovered] = useState(0);
