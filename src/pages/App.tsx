@@ -1,4 +1,4 @@
-import Header from 'components/organisms/Header/Header';
+import Header from 'components/templates/Header/Header';
 
 const App = () => {
   return (

@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { filtersSlice } from './slices/filters/filtersSlice';
-import { menuSlice } from './slices/menu/menuSlice';
+import filtersReducer from './slices/filters/filtersSlice';
+import menuReducer from './slices/menu/menuSlice';
+import hotelsReducer from './slices/hotels/hotelsSlice';
+import roomsReducer from './slices/rooms/roomsSlice';
 
 const reducer = {
-  filters: filtersSlice.reducer,
-  menu: menuSlice.reducer,
+  filters: filtersReducer,
+  menu: menuReducer,
+  hotels: hotelsReducer,
+  rooms: roomsReducer,
 };
 
 export default configureStore({

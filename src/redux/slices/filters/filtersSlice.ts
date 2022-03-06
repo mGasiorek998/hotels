@@ -21,3 +21,5 @@ export const filtersSlice = createSlice({
 
 // Actions
 export const { apply: applyFilter } = filtersSlice.actions;
+
+export default filtersSlice.reducer;
