@@ -1,36 +1,23 @@
 import {
-  FiltersSection,
+  BurgerWrapper,
   Overlay,
   StyledHeader,
   StyledImage,
 } from './Header.styles';
 import HeaderImage from '../../../assets/images/HeaderImage.webp';
-import StarRatingFilter from 'components/molecules/StarRatingFilter/StarRatingFilter';
-import CounterFilter from 'components/molecules/CounterFilter/CounterFilter';
-import { FiltersEnum } from 'redux/slices/filters.types';
-import { useSelector } from 'react-redux';
+import Filters from '../Filters/Filters';
+import BurgerButton from 'components/atoms/BurgerButton/BurgerButton';
 
 const Header = () => {
-  const { kids, adults } = useSelector((state: State) => state.filters);
-
   return (
     <StyledHeader>
+      <BurgerWrapper>
+        <BurgerButton />
+      </BurgerWrapper>
       <Overlay>
         <StyledImage src={HeaderImage} alt="Header image" />
       </Overlay>
-      <FiltersSection>
-        <StarRatingFilter />
-        <CounterFilter
-          label="Adults"
-          filter={FiltersEnum.Adults}
-          counter={adults}
-        />
-        <CounterFilter
-          label="Children"
-          filter={FiltersEnum.Kids}
-          counter={kids}
-        />
-      </FiltersSection>
+      <Filters />
     </StyledHeader>
   );
 };

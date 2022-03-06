@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { applyFilter } from 'redux/slices/filtersSlice';
+import { applyFilter } from 'redux/slices/filters/filtersSlice';
 import Star from 'components/atoms/Star/Star';
 import { Wrapper } from './StarRatingFilter.styles';
-import { FiltersEnum } from 'redux/slices/filters.types';
+import { FiltersEnum } from 'redux/slices/filters/filters.types';
 
 const StarRatingFilter = () => {
   const [starsHovered, setStarsHovered] = useState(0);
@@ -35,7 +35,7 @@ const StarRatingFilter = () => {
 
   return (
     <Wrapper>
-      {Array(1, 2, 3, 4, 5).map((value) => (
+      {[1, 2, 3, 4, 5].map((value) => (
         <Star
           key={value}
           value={value}

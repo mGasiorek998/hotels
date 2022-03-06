@@ -30,15 +30,8 @@ export const Overlay = styled.div`
   );
 `;
 
-export const FiltersSection = styled.section`
-  min-height: 50px;
+export const BurgerWrapper = styled.div`
   position: absolute;
-  left: 50%;
-  bottom: -5%;
-  transform: translate(-50%, -5%);
-  background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 1px 10px 1px ${({ theme }) => rgba(theme.colors.black, 0.4)};
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+  top: 8px;
+  left: 8px;
 `;

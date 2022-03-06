@@ -1,8 +1,7 @@
 import CounterButton from 'components/atoms/CounterButton/CounterButton';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
-import { FiltersEnum } from 'redux/slices/filters.types';
-import { applyFilter } from 'redux/slices/filtersSlice';
+import { FiltersEnum } from 'redux/slices/filters/filters.types';
+import { applyFilter } from 'redux/slices/filters/filtersSlice';
 import { StyledHeader, Wrapprer, StyledCounter } from './CounterFilter.styles';
 
 interface CounterProps {
