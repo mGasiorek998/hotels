@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenu } from 'redux/slices/menu/menuSlice';
+import { State } from 'types';
 import { Burger, BurgerLines } from './BurgerButton.styles';
 
 const BurgerButton = () => {

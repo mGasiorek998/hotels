@@ -3,6 +3,7 @@ import StarRatingFilter from 'components/molecules/StarRatingFilter/StarRatingFi
 import { FiltersEnum } from 'redux/slices/filters/filters.types';
 import { FiltersSection } from './Filters.styles';
 import { useSelector } from 'react-redux';
+import { State } from 'types';
 
 const Filters = () => {
   const {

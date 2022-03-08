@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { applyFilter } from 'redux/slices/filters/filtersSlice';
-import Star from 'components/atoms/Star/Star';
+import Star, { StarType } from 'components/atoms/Star/Star';
 import { Wrapper } from './StarRatingFilter.styles';
 import { FiltersEnum } from 'redux/slices/filters/filters.types';
+import { State } from 'types';
 
 const StarRatingFilter = () => {
   const [starsHovered, setStarsHovered] = useState(0);
@@ -16,7 +17,7 @@ const StarRatingFilter = () => {
       dispatch(
         applyFilter({
           filter: FiltersEnum.Stars,
-          value: -1,
+          value: 0,
         })
       );
     else
@@ -37,6 +38,7 @@ const StarRatingFilter = () => {
     <Wrapper>
       {[1, 2, 3, 4, 5].map((value) => (
         <Star
+          type={StarType.Interactive}
           key={value}
           value={value}
           isFilled={value <= stars || value <= starsHovered ? true : false}

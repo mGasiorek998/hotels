@@ -5,7 +5,7 @@ import {
   StyledImage,
 } from './Header.styles';
 import HeaderImage from '../../../assets/images/HeaderImage.webp';
-import Filters from '../../organisms/Filters/Filters';
+import Filters from '../Filters/Filters';
 import BurgerButton from 'components/atoms/BurgerButton/BurgerButton';
 
 const Header = () => {

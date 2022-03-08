@@ -15,7 +15,9 @@ export const filtersSlice = createSlice({
     apply: (
       state,
       action: PayloadAction<{ filter: FiltersEnum; value: number }>
-    ) => ({ ...state, [action.payload.filter]: action.payload.value }),
+    ) => {
+      return { ...state, [action.payload.filter]: action.payload.value };
+    },
   },
 });
 
