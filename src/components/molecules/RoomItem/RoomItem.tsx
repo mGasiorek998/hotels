@@ -1,4 +1,4 @@
-import { RatePlan, Room } from 'redux/slices/hotels/api.types';
+import { RatePlan, Room } from 'redux/slices/api/api.types';
 import { RoomDetails, RoomHeader, RoomItemWrapper } from './RoomItem.styles';
 
 interface RoomItemProps {

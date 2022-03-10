@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { render as rtlRender } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
@@ -7,8 +8,9 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 
 function render(
-  ui,
+  ui: React.ReactElement,
   {
+    //@ts-ignore
     preloadedState,
     store = configureStore({
       reducer: { filters: filtersReducer, menu: menuReducer },

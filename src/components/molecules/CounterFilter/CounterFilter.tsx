@@ -1,34 +1,31 @@
 import CounterButton from 'components/atoms/CounterButton/CounterButton';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FiltersEnum } from 'redux/slices/filters/filters.types';
 import { applyFilter } from 'redux/slices/filters/filtersSlice';
+import { State } from 'types';
 import { StyledHeader, Wrapprer, StyledCounter } from './CounterFilter.styles';
 
 interface CounterProps {
   label: string;
   filter: FiltersEnum;
-  counter: number;
 }
 
-const CounterFilter = ({ label, filter, counter }: CounterProps) => {
+const CounterFilter = ({ label, filter }: CounterProps) => {
   const dispatch = useDispatch();
+  const value = useSelector((state: State) => state.filters[filter]);
 
   return (
     <Wrapprer>
       <StyledHeader>{label}:</StyledHeader>
       <CounterButton
-        handleClick={() =>
-          dispatch(applyFilter({ filter, value: counter + 1 }))
-        }
+        handleClick={() => dispatch(applyFilter({ filter, value: value + 1 }))}
       >
         +
       </CounterButton>
-      <StyledCounter>{counter}</StyledCounter>
+      <StyledCounter data-testid="counter">{value}</StyledCounter>
       <CounterButton
-        disabled={counter <= 0}
-        handleClick={() =>
-          dispatch(applyFilter({ filter, value: counter - 1 }))
-        }
+        disabled={value <= 0}
+        handleClick={() => dispatch(applyFilter({ filter, value: value - 1 }))}
       >
         -
       </CounterButton>

@@ -2,8 +2,8 @@ import Star, { StarType } from 'components/atoms/Star/Star';
 import RoomItem from 'components/molecules/RoomItem/RoomItem';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Hotel } from 'redux/slices/hotels/api.types';
-import { getRoomsByHotelId } from 'redux/slices/hotels/apiSlice';
+import { Hotel } from 'redux/slices/api/api.types';
+import { getRoomsByHotelId } from 'redux/slices/api/apiSlice';
 import {
   HotelCardWrapper,
   HotelHeader,

@@ -1,6 +1,6 @@
 import HotelCard from 'components/organisms/HotelCard/HotelCard';
 import { useSelector } from 'react-redux';
-import { Hotel } from 'redux/slices/hotels/api.types';
+import { Hotel } from 'redux/slices/api/api.types';
 import { State } from 'types';
 
 const HotelList = () => {

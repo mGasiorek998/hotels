@@ -6,24 +6,13 @@ import { useSelector } from 'react-redux';
 import { State } from 'types';
 
 const Filters = () => {
-  const {
-    filters: { kids, adults },
-    menu: { isOpen },
-  } = useSelector((state: State) => state);
+  const { isOpen } = useSelector((state: State) => state.menu);
 
   return (
     <FiltersSection isOpen={isOpen}>
       <StarRatingFilter />
-      <CounterFilter
-        label="Adults"
-        filter={FiltersEnum.Adults}
-        counter={adults}
-      />
-      <CounterFilter
-        label="Children"
-        filter={FiltersEnum.Kids}
-        counter={kids}
-      />
+      <CounterFilter label="Adults" filter={FiltersEnum.Adults} />
+      <CounterFilter label="Children" filter={FiltersEnum.Kids} />
     </FiltersSection>
   );
 };

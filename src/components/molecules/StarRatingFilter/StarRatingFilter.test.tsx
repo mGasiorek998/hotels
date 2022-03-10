@@ -1,10 +1,8 @@
-import { screen, fireEvent, cleanup } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import { render } from 'helpers/test-utils';
 import StarRatingFilter from './StarRatingFilter';
 
 describe('Star Rating Filter Component', () => {
-  beforeEach(() => cleanup());
-
   it('renders with only empty stars icons', () => {
     render(<StarRatingFilter />);
     const stars = screen.getAllByTestId('starOutlined');
