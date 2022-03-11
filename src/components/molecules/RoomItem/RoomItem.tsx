@@ -1,5 +1,5 @@
 import { Room } from 'redux/slices/api/api.types';
-import { RoomDetails, RoomHeader, RoomItemWrapper } from './RoomItem.styles';
+import { RoomHeader, RoomItemWrapper } from './RoomItem.styles';
 
 interface RoomItemProps {
   room: Room;
@@ -13,9 +13,9 @@ const RoomItem = ({ room }: RoomItemProps) => {
         <p>Adults: {room.occupancy.maxAdults}</p>
         <p>Children: {room.occupancy.maxChildren}</p>
       </RoomHeader>
-      <RoomDetails>
+      <div>
         <p>{room.longDescription}</p>
-      </RoomDetails>
+      </div>
     </RoomItemWrapper>
   );
 };
