@@ -4,7 +4,7 @@ export const HotelCardWrapper = styled.li`
   list-style: none;
   margin-bottom: 32px;
   box-shadow: 0px 10px 16px 0px ${({ theme }) => theme.colors.lightGrey};
-
+  border-radius: 5px;
   > * {
     padding: 16px 8px;
 
@@ -18,6 +18,7 @@ export const HotelHeader = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
   ${({ theme }) => theme.devices.desktop} {
     flex-direction: row;
