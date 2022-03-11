@@ -1,4 +1,5 @@
 import Star, { StarType } from 'components/atoms/Star/Star';
+import Carousel from 'components/molecules/Carousel/Carousel';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Hotel } from 'redux/slices/api/api.types';
@@ -7,7 +8,6 @@ import RoomsList from '../RoomsList/RoomsList';
 import {
   HotelCardWrapper,
   HotelHeader,
-  HotelImage,
   HotelDetails,
   HotelStarsRating,
 } from './HotelCard.styles';
@@ -28,7 +28,7 @@ const HotelCard = ({
   return (
     <HotelCardWrapper>
       <HotelHeader>
-        <HotelImage src={images[0].url} alt="hotel 1" />
+        <Carousel images={images} />
         <HotelDetails>
           <h1>{name}</h1>
           <h3>{address1}</h3>

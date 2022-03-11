@@ -15,7 +15,7 @@ interface Facility {
   name?: string;
 }
 
-interface Image {
+export interface Image {
   url: string;
   alt?: string;
 }
