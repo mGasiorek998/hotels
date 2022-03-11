@@ -1,12 +1,11 @@
-import { RatePlan, Room } from 'redux/slices/api/api.types';
+import { Room } from 'redux/slices/api/api.types';
 import { RoomDetails, RoomHeader, RoomItemWrapper } from './RoomItem.styles';
 
 interface RoomItemProps {
   room: Room;
-  ratePlans: RatePlan[];
 }
 
-const RoomItem = ({ room, ratePlans }: RoomItemProps) => {
+const RoomItem = ({ room }: RoomItemProps) => {
   return (
     <RoomItemWrapper>
       <RoomHeader>

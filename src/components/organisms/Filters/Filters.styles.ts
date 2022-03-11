@@ -19,6 +19,7 @@ export const FiltersSection = styled.section<FilterSectionProps>`
   align-items: center;
   transform: translateX(${({ isOpen }) => (!isOpen ? '-105%' : '0')});
   transition: transform 0.4s ease-in-out;
+  z-index: 5;
 
   ${({ theme }) => theme.devices.tablet} {
     position: absolute;

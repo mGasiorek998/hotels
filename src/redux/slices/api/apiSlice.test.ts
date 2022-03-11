@@ -7,7 +7,7 @@ import {
   mockRatePlans,
   mockRoomsList,
   mockHotelsListWithRooms,
-} from './apiSlice.mocks';
+} from './apiSlice.test-mocks';
 
 describe('API Slice: getHotels Action', () => {
   it('has default value of empyt hotel list and not loading', () => {

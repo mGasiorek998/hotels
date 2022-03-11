@@ -2,8 +2,6 @@ export interface FiltersState {
   stars: number;
   adults: number;
   kids: number;
-  filteredHotels: number;
-  filteredRooms: number;
 }
 
 export enum FiltersEnum {

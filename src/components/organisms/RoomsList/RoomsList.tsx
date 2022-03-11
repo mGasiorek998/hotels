@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import RoomItem from 'components/molecules/RoomItem/RoomItem';
-import { RatePlan, Room } from 'redux/slices/api/api.types';
+import { Room } from 'redux/slices/api/api.types';
 import { State } from 'types';
+import { StyledText } from './RoomsList.styles';
 
 interface RoomsListProps {
   rooms: Room[];
-  ratePlans: RatePlan[];
 }
 
-const RoomsList = ({ rooms = [], ratePlans = [] }: RoomsListProps) => {
+const RoomsList = ({ rooms = [] }: RoomsListProps) => {
   const { adults, kids } = useSelector((state: State) => state.filters);
   const [filteredRooms, setFilteredRooms] = useState<Room[]>([]);
 
@@ -39,11 +39,11 @@ const RoomsList = ({ rooms = [], ratePlans = [] }: RoomsListProps) => {
       {filteredRooms.length ? (
         <ul>
           {filteredRooms.map((room: Room, i: number) => (
-            <RoomItem key={i} room={room} ratePlans={ratePlans} />
+            <RoomItem key={i} room={room} />
           ))}
         </ul>
       ) : (
-        <p>No rooms matched your needs :(</p>
+        <StyledText>No rooms matched your needs :(</StyledText>
       )}
     </>
   );

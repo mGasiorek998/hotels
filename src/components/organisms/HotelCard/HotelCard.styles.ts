@@ -24,19 +24,9 @@ export const HotelHeader = styled.div`
   }
 `;
 
-export const HotelImage = styled.img`
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-
-  ${({ theme }) => theme.devices.desktop} {
-    margin-right: 32px;
-    width: 350px;
-  }
-`;
-
 export const HotelDetails = styled.div`
   margin-right: auto;
+
   h1 {
     margin-top: 16px;
 

@@ -46,10 +46,7 @@ const HotelCard = ({
         </HotelStarsRating>
       </HotelHeader>
       {roomsDetails?.rooms ? (
-        <RoomsList
-          rooms={roomsDetails?.rooms}
-          ratePlans={roomsDetails?.ratePlans}
-        />
+        <RoomsList rooms={roomsDetails?.rooms} />
       ) : (
         <p>Loading rooms...</p>
       )}
