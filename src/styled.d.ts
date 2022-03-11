@@ -1,7 +1,7 @@
 import 'styled-components';
 
 declare module 'styled-components' {
-  export interface Theme {
+  export interface DefaultTheme {
     colors: {
       black: string;
       white: string;
@@ -9,10 +9,17 @@ declare module 'styled-components' {
       orange: string;
     };
 
+    fontSizes: {
+      xl: string;
+      l: string;
+      m: string;
+      s: string;
+    };
+
     devices: {
-      phone: string;
       tablet: string;
       desktop: string;
+      bigDesktop: string;
     };
   }
 }
