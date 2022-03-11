@@ -6,7 +6,7 @@ interface RoomItemProps {
   ratePlans: RatePlan[];
 }
 
-const RoomItem = ({ room }: RoomItemProps) => {
+const RoomItem = ({ room, ratePlans }: RoomItemProps) => {
   return (
     <RoomItemWrapper>
       <RoomHeader>

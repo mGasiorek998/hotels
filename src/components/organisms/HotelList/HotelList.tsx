@@ -1,19 +1,29 @@
-import HotelCard from 'components/organisms/HotelCard/HotelCard';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import HotelCard from 'components/organisms/HotelCard/HotelCard';
 import { Hotel } from 'redux/slices/api/api.types';
 import { State } from 'types';
 
 const HotelList = () => {
-  const { hotelsList, hotelsLoading } = useSelector(
-    (state: State) => state.hotels
-  );
+  const {
+    hotels: { hotelsList },
+    filters: { stars },
+  } = useSelector((state: State) => state);
+  const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([]);
+
+  useEffect(() => {
+    const filteredHotels =
+      stars > 0
+        ? hotelsList.filter(({ starRating }: Hotel) => +starRating >= stars)
+        : hotelsList;
+    setFilteredHotels(filteredHotels);
+  }, [stars, hotelsList]);
 
   return (
     <section>
       <ul>
-        {hotelsLoading && <h1>Loading Hotels...</h1>}
-        {hotelsList.length > 0 &&
-          hotelsList.map((hotel: Hotel) => (
+        {filteredHotels.length > 0 &&
+          filteredHotels.map((hotel: Hotel) => (
             <HotelCard key={hotel.id} hotel={hotel} />
           ))}
       </ul>

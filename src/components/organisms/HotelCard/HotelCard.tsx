@@ -1,9 +1,9 @@
 import Star, { StarType } from 'components/atoms/Star/Star';
-import RoomItem from 'components/molecules/RoomItem/RoomItem';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Hotel } from 'redux/slices/api/api.types';
 import { getRoomsByHotelId } from 'redux/slices/api/apiSlice';
+import RoomsList from '../RoomsList/RoomsList';
 import {
   HotelCardWrapper,
   HotelHeader,
@@ -45,12 +45,14 @@ const HotelCard = ({
           ))}
         </HotelStarsRating>
       </HotelHeader>
-      <ul>
-        {roomsDetails?.rooms &&
-          roomsDetails?.rooms.map((room, i: number) => (
-            <RoomItem key={i} room={room} ratePlans={roomsDetails.ratePlans} />
-          ))}
-      </ul>
+      {roomsDetails?.rooms ? (
+        <RoomsList
+          rooms={roomsDetails?.rooms}
+          ratePlans={roomsDetails?.ratePlans}
+        />
+      ) : (
+        <p>Loading rooms...</p>
+      )}
     </HotelCardWrapper>
   );
 };
