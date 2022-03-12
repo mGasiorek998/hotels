@@ -16,10 +16,16 @@ declare module 'styled-components' {
       s: string;
     };
 
+    spacing: {
+      xl: string;
+      l: string;
+      m: string;
+      s: string;
+    };
+
     devices: {
       tablet: string;
       desktop: string;
-      bigDesktop: string;
     };
   }
 }

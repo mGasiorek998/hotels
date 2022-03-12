@@ -7,7 +7,7 @@ export const Wrapprer = styled.div`
 
 export const StyledHeader = styled.h4`
   font-size: ${({ theme }) => theme.fontSizes.m};
-  margin-right: 6px;
+  margin-right: ${({ theme }) => theme.spacing.s}; ;
 `;
 
 export const StyledCounter = styled.p`

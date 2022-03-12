@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const StyledMain = styled.main`
-  margin: 16px 8px;
+  margin: ${({ theme }) => `${theme.spacing.m} ${theme.spacing.s}`};
 
   ${({ theme }) => theme.devices.tablet} {
-    margin: 64px auto 16px;
-    width: 90%;
+    margin: ${({ theme }) => `${theme.spacing.xl} auto ${theme.spacing.m}`};
+    width: 80%;
   }
 
   ${({ theme }) => theme.devices.desktop} {
-    margin: 64px auto 32px;
+    margin: ${({ theme }) => `${theme.spacing.xl} auto ${theme.spacing.l}`};
     width: 70%;
     min-width: 850px;
   }

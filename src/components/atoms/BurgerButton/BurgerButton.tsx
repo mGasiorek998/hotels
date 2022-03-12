@@ -8,7 +8,7 @@ const BurgerButton = () => {
   const { isOpen } = useSelector((state: State) => state.menu);
 
   return (
-    <Burger onClick={() => dispatch(toggleMenu())}>
+    <Burger isOpen={isOpen} onClick={() => dispatch(toggleMenu())}>
       <BurgerLines isOpen={isOpen} />
     </Burger>
   );

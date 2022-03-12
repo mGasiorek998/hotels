@@ -2,21 +2,23 @@ import styled from 'styled-components';
 
 export const HotelCardWrapper = styled.li`
   list-style: none;
-  margin-bottom: 32px;
+  margin-bottom: ${({ theme }) => theme.spacing.l};
   box-shadow: 0px 10px 16px 0px ${({ theme }) => theme.colors.lightGrey};
   border-radius: 5px;
+
   > * {
-    padding: 16px 8px;
+    padding: ${({ theme }) => `${theme.spacing.m} ${theme.spacing.s}`};
 
     ${({ theme }) => theme.devices.desktop} {
-      padding: 32px;
+      padding: ${({ theme }) => `${theme.spacing.m} ${theme.spacing.l}`};
     }
   }
 `;
 
 export const HotelHeader = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
@@ -29,18 +31,24 @@ export const HotelDetails = styled.div`
   margin-right: auto;
 
   h1 {
-    margin-top: 16px;
+    margin-top: ${({ theme }) => theme.spacing.m};
 
     ${({ theme }) => theme.devices.desktop} {
       margin-top: 0;
     }
   }
+
   h1,
   h3 {
-    margin-bottom: 16px;
+    margin-bottom: ${({ theme }) => theme.spacing.m};
   }
 `;
 
 export const HotelStarsRating = styled.div`
   display: flex;
+  margin-top: ${({ theme }) => theme.spacing.m};
+
+  ${({ theme }) => theme.devices.desktop} {
+    margin-top: 0;
+  }
 `;

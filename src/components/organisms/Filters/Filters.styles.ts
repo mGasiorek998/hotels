@@ -28,7 +28,7 @@ export const FiltersSection = styled.section<FilterSectionProps>`
     bottom: -5%;
     transform: translate(-50%, 5%);
     width: 650px;
-    padding: 0 16px;
+    padding: ${({ theme }) => `0 ${theme.spacing.m}`};
     height: 50px;
     flex-direction: row;
     transition: none;

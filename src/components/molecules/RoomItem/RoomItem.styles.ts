@@ -3,8 +3,13 @@ import styled from 'styled-components';
 export const RoomItemWrapper = styled.li`
   display: grid;
   list-style: none;
-  padding: 16px 0;
+  padding: ${({ theme }) => `${theme.spacing.m} 0`};
+
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+
+  &:first-of-type {
+    padding: ${({ theme }) => `0 0 ${theme.spacing.m}`};
+  }
 
   ${({ theme }) => theme.devices.tablet} {
     grid-template-columns: 300px 1fr;
@@ -16,9 +21,9 @@ export const RoomItemWrapper = styled.li`
 `;
 
 export const RoomHeader = styled.div`
-  margin: 0 16px 16px 0;
+  margin: ${({ theme }) => `0 ${theme.spacing.m} ${theme.spacing.m} 0`};
 
   > h3 {
-    margin-bottom: 8px;
+    margin-bottom: ${({ theme }) => theme.spacing.s};
   }
 `;

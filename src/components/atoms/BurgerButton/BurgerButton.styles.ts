@@ -4,11 +4,11 @@ interface BurgerProps {
   isOpen: boolean;
 }
 
-export const Burger = styled.button`
-  position: relative;
+export const Burger = styled.button<BurgerProps>`
+  position: ${({ isOpen }) => (isOpen ? 'fixed' : 'relative')};
   border: none;
   border-radius: 50%;
-  padding: 8px;
+  padding: ${({ theme }) => theme.spacing.s};
   background: ${({ theme }) => theme.colors.white};
   height: 50px;
   width: 50px;
