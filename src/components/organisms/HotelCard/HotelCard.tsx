@@ -1,3 +1,4 @@
+import LoadingSpinner from 'components/atoms/LoadingSpinner/LoadingSpinner';
 import Star, { StarType } from 'components/atoms/Star/Star';
 import Carousel from 'components/molecules/Carousel/Carousel';
 import { useEffect } from 'react';
@@ -48,7 +49,7 @@ const HotelCard = ({
       {roomsDetails?.rooms ? (
         <RoomsList rooms={roomsDetails?.rooms} />
       ) : (
-        <p>Loading rooms...</p>
+        <LoadingSpinner size="small" />
       )}
     </HotelCardWrapper>
   );

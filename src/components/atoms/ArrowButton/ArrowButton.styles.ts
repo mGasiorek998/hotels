@@ -11,7 +11,7 @@ export const StyledArrowButton = styled.button<ArrowButtonProps>`
   left: ${({ dir }) => (dir === 'back' ? '0' : 'auto')};
   bottom: 0;
   z-index: 2;
-  padding: 16px;
+  padding: ${({ theme }) => theme.spacing.m};
   background-color: transparent;
   border: none;
   font-size: ${({ theme }) => theme.fontSizes.m};

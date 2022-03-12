@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledMain = styled.main`
+  position: relative;
   margin: ${({ theme }) => `${theme.spacing.m} ${theme.spacing.s}`};
 
   ${({ theme }) => theme.devices.tablet} {
