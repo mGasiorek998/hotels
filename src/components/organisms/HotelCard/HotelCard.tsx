@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import LoadingSpinner from 'components/atoms/LoadingSpinner/LoadingSpinner';
 import Star, { StarType } from 'components/atoms/Star/Star';
 import Carousel from 'components/molecules/Carousel/Carousel';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { Hotel } from 'redux/slices/api/api.types';
 import { getRoomsByHotelId } from 'redux/slices/api/apiSlice';
 import RoomsList from '../RoomsList/RoomsList';

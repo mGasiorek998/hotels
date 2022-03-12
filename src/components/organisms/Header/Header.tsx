@@ -4,7 +4,7 @@ import {
   StyledHeader,
   StyledImage,
 } from './Header.styles';
-import HeaderImage from '../../../assets/images/HeaderImage.webp';
+import HeaderImage from 'assets/images/HeaderImage.webp';
 import Filters from '../Filters/Filters';
 import BurgerButton from 'components/atoms/BurgerButton/BurgerButton';
 
