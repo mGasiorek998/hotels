@@ -11,6 +11,7 @@ const HotelList = () => {
   } = useSelector((state: State) => state);
   const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([]);
 
+  // filter holtes by star rating
   useEffect(() => {
     const filteredHotels =
       stars > 0

@@ -44,8 +44,7 @@ export const HotelDetails = styled.div`
   }
 `;
 
-export const HotelStarsRating = styled.div`
-  display: flex;
+export const StarRatingWrapper = styled.div`
   margin-top: ${({ theme }) => theme.spacing.m};
 
   ${({ theme }) => theme.devices.desktop} {

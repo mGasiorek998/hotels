@@ -9,6 +9,7 @@ import {
   HotelCardWrapper,
   HotelHeader,
   HotelDetails,
+  StarRatingWrapper,
 } from './HotelCard.styles';
 import StarRatingFilter from 'components/molecules/StarRatingFilter/StarRatingFilter';
 import AriaDescription from 'components/atoms/AriaDescription/AriaDescription';
@@ -38,11 +39,13 @@ const HotelCard = ({
         <AriaDescription id="starsRating">
           {starRating} stars out of 5
         </AriaDescription>
-        <StarRatingFilter
-          aria-labelledby="starsRating"
-          isInteractive={false}
-          starsValue={+starRating}
-        />
+        <StarRatingWrapper>
+          <StarRatingFilter
+            aria-labelledby="starsRating"
+            isInteractive={false}
+            starsValue={+starRating}
+          />
+        </StarRatingWrapper>
       </HotelHeader>
       {roomsDetails?.rooms ? (
         <RoomsList rooms={roomsDetails?.rooms} />

@@ -1,3 +1,6 @@
+/* 
+  All mocks used ONLY for testing api reducers 
+*/
 import { Hotel, RatePlan, Room } from './api.types';
 
 export const mockInitialState = {

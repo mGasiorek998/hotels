@@ -1,3 +1,6 @@
+/*
+  Add theme interface for styled componets 
+*/
 import 'styled-components';
 
 declare module 'styled-components' {

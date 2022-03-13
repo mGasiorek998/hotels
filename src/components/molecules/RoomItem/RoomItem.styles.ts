@@ -8,7 +8,12 @@ export const RoomItemWrapper = styled.li`
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
   &:first-of-type {
-    padding: ${({ theme }) => `0 0 ${theme.spacing.m}`};
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   ${({ theme }) => theme.devices.tablet} {

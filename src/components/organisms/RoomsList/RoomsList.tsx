@@ -13,6 +13,7 @@ const RoomsList = ({ rooms = [] }: RoomsListProps) => {
   const { adults, kids } = useSelector((state: State) => state.filters);
   const [filteredRooms, setFilteredRooms] = useState<Room[]>([]);
 
+  // filter by rooms occupancy
   useEffect(() => {
     let filteredRooms = rooms;
     if (kids === 0) {
@@ -24,7 +25,7 @@ const RoomsList = ({ rooms = [] }: RoomsListProps) => {
         ({ occupancy }) => occupancy.maxChildren >= kids
       );
     }
-
+    // when there is no adults skip filtering
     if (adults > 0) {
       filteredRooms = filteredRooms.filter(
         ({ occupancy }) => occupancy.maxAdults >= adults

@@ -1,4 +1,8 @@
 /* eslint-disable */
+/* 
+  override @testing-library/react render function
+  to provide theme and redux store
+*/
 import { render as rtlRender } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
