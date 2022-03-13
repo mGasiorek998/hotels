@@ -25,6 +25,7 @@ export const HotelImage = styled.img<HotelImageProps>`
   width: 100%;
   object-fit: cover;
   opacity: ${({ isVisible }) => (isVisible ? '100%' : '0')};
+  visibility: ${({ isVisible }) => (isVisible ? 'visilbe' : 'hidden')};
   transition: opacity 0.2s ease-in;
 
   ${({ theme }) => theme.devices.desktop} {

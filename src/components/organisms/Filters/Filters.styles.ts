@@ -19,6 +19,7 @@ export const FiltersSection = styled.section<FilterSectionProps>`
   align-items: center;
   transform: translateX(${({ isOpen }) => (!isOpen ? '-105%' : '0')});
   transition: transform 0.4s ease-in-out;
+  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   z-index: 5;
 
   ${({ theme }) => theme.devices.tablet} {
@@ -32,5 +33,6 @@ export const FiltersSection = styled.section<FilterSectionProps>`
     height: 50px;
     flex-direction: row;
     transition: none;
+    visibility: visible;
   }
 `;

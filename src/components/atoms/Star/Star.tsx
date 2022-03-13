@@ -1,4 +1,5 @@
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import AriaDescription from '../AriaDescription/AriaDescription';
 import { StarButton, StarWrapper } from './Star.styles';
 
 export enum StarType {
@@ -30,14 +31,22 @@ const Star = ({
       onMouseLeave={() => handleMouseLeave?.()}
     >
       {isFilled ? (
-        <AiFillStar data-testid="starFilled" />
+        <AiFillStar data-testid="starFilled" aria-hidden="true" />
       ) : (
-        <AiOutlineStar data-testid="starOutlined" />
+        <AiOutlineStar data-testid="starOutlined" aria-hidden="true" />
       )}
+      <AriaDescription>
+        Star rating Filter. Filter By {value} {value !== 5 && 'and more '}
+        stars hotel
+      </AriaDescription>
     </StarButton>
   ) : (
     <StarWrapper isFilled={isFilled}>
-      {isFilled ? <AiFillStar /> : <AiOutlineStar />}
+      {isFilled ? (
+        <AiFillStar aria-hidden="true" />
+      ) : (
+        <AiOutlineStar aria-hidden="true" />
+      )}
     </StarWrapper>
   );
 

@@ -20,7 +20,7 @@ const HotelList = () => {
   }, [stars, hotelsList]);
 
   return (
-    <section>
+    <section id="hotels">
       <ul>
         {filteredHotels.length > 0 &&
           filteredHotels.map((hotel: Hotel) => (

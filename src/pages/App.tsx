@@ -1,4 +1,5 @@
 import LoadingSpinner from 'components/atoms/LoadingSpinner/LoadingSpinner';
+import SkipLink from 'components/atoms/SkipLink/SkipLink';
 import Header from 'components/organisms/Header/Header';
 import HotelList from 'components/organisms/HotelList/HotelList';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
@@ -18,6 +19,7 @@ const App = () => {
   }, [dispatch]);
   return (
     <>
+      <SkipLink to="#hotels">Skip to hotels list</SkipLink>
       <Header />
       <MainTemplate>
         {!hotelsLoading && hotelsList ? (
