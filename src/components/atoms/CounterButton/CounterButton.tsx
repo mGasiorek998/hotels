@@ -1,7 +1,7 @@
 import { StyledButton } from './CounterButton.styles';
 
 interface CounterButtonProps {
-  children: string;
+  children: JSX.Element | string;
   handleClick: () => void;
   disabled?: boolean;
 }

@@ -1,3 +1,4 @@
+import AriaDescription from 'components/atoms/AriaDescription/AriaDescription';
 import CounterButton from 'components/atoms/CounterButton/CounterButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { FiltersEnum } from 'redux/slices/filters/filters.types';
@@ -20,14 +21,26 @@ const CounterFilter = ({ label, filter }: CounterProps) => {
       <CounterButton
         handleClick={() => dispatch(applyFilter({ filter, value: value + 1 }))}
       >
-        +
+        <>
+          <AriaDescription>
+            Add button {label} occupancy filter. Find rooms with ocuppancy:{' '}
+            {value} {label} and more.
+          </AriaDescription>
+          <span aria-hidden="true">+</span>
+        </>
       </CounterButton>
       <StyledCounter data-testid="counter">{value}</StyledCounter>
       <CounterButton
         disabled={value <= 0}
         handleClick={() => dispatch(applyFilter({ filter, value: value - 1 }))}
       >
-        -
+        <>
+          <AriaDescription>
+            Less button {label} occupancy filter. Find rooms with ocuppancy:{' '}
+            {value} {label} and more.
+          </AriaDescription>
+          <span aria-hidden="true">-</span>
+        </>
       </CounterButton>
     </Wrapprer>
   );

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import LoadingSpinner from 'components/atoms/LoadingSpinner/LoadingSpinner';
-import Star, { StarType } from 'components/atoms/Star/Star';
 import Carousel from 'components/molecules/Carousel/Carousel';
 import { Hotel } from 'redux/slices/api/api.types';
 import { getRoomsByHotelId } from 'redux/slices/api/apiSlice';
@@ -10,8 +9,9 @@ import {
   HotelCardWrapper,
   HotelHeader,
   HotelDetails,
-  HotelStarsRating,
 } from './HotelCard.styles';
+import StarRatingFilter from 'components/molecules/StarRatingFilter/StarRatingFilter';
+import AriaDescription from 'components/atoms/AriaDescription/AriaDescription';
 
 interface HotelCardProps {
   hotel: Hotel;
@@ -35,16 +35,14 @@ const HotelCard = ({
           <h3>{address1}</h3>
           <h3>{address2}</h3>
         </HotelDetails>
-        <HotelStarsRating>
-          {[1, 2, 3, 4, 5].map((value) => (
-            <Star
-              key={value}
-              type={StarType.Noninteractive}
-              isFilled={value <= +starRating}
-              value={value}
-            />
-          ))}
-        </HotelStarsRating>
+        <AriaDescription id="starsRating">
+          {starRating} stars out of 5
+        </AriaDescription>
+        <StarRatingFilter
+          aria-labelledby="starsRating"
+          isInteractive={false}
+          starsValue={+starRating}
+        />
       </HotelHeader>
       {roomsDetails?.rooms ? (
         <RoomsList rooms={roomsDetails?.rooms} />

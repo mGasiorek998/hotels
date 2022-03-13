@@ -4,14 +4,14 @@ import StarRatingFilter from './StarRatingFilter';
 
 describe('Star Rating Filter Component', () => {
   it('renders with only empty stars icons', () => {
-    render(<StarRatingFilter />);
+    render(<StarRatingFilter isInteractive={true} />);
     const stars = screen.getAllByTestId('starOutlined');
 
     expect(stars).toHaveLength(5);
   });
 
   it('renders correct amount of filled stars', () => {
-    render(<StarRatingFilter />);
+    render(<StarRatingFilter isInteractive={true} />);
 
     const stars = screen.getAllByRole('button');
 
@@ -23,7 +23,7 @@ describe('Star Rating Filter Component', () => {
   });
 
   it('clears stars when the same star was clicked twice', () => {
-    render(<StarRatingFilter />);
+    render(<StarRatingFilter isInteractive={true} />);
 
     const stars = screen.getAllByRole('button');
 

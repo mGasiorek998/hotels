@@ -6,7 +6,15 @@ import { Wrapper } from './StarRatingFilter.styles';
 import { FiltersEnum } from 'redux/slices/filters/filters.types';
 import { State } from 'types';
 
-const StarRatingFilter = () => {
+interface StarRatingFilterProps {
+  isInteractive: boolean;
+  starsValue?: number;
+}
+
+const StarRatingFilter = ({
+  isInteractive,
+  starsValue = 0,
+}: StarRatingFilterProps) => {
   const [starsHovered, setStarsHovered] = useState(0);
   const { stars } = useSelector((state: State) => state.filters);
 
@@ -36,17 +44,26 @@ const StarRatingFilter = () => {
 
   return (
     <Wrapper>
-      {[1, 2, 3, 4, 5].map((value) => (
-        <Star
-          type={StarType.Interactive}
-          key={value}
-          value={value}
-          isFilled={value <= stars || value <= starsHovered ? true : false}
-          handleClick={changeRating}
-          handleMouseLeave={handleMouseLeave}
-          handleMouseEnter={handleMouseEnter}
-        />
-      ))}
+      {[1, 2, 3, 4, 5].map((value) =>
+        isInteractive ? (
+          <Star
+            type={StarType.Interactive}
+            key={value}
+            value={value}
+            isFilled={value <= stars || value <= starsHovered ? true : false}
+            handleClick={changeRating}
+            handleMouseLeave={handleMouseLeave}
+            handleMouseEnter={handleMouseEnter}
+          />
+        ) : (
+          <Star
+            type={StarType.Noninteractive}
+            key={value}
+            value={value}
+            isFilled={starsValue >= value}
+          />
+        )
+      )}
     </Wrapper>
   );
 };

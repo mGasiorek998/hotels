@@ -10,7 +10,7 @@ const Filters = () => {
 
   return (
     <FiltersSection isOpen={isOpen}>
-      <StarRatingFilter />
+      <StarRatingFilter isInteractive={true} />
       <CounterFilter label="Adults" filter={FiltersEnum.Adults} />
       <CounterFilter label="Children" filter={FiltersEnum.Kids} />
     </FiltersSection>
