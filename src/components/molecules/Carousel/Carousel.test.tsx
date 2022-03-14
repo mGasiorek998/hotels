@@ -23,10 +23,9 @@ describe('Carousel Component', () => {
     const buttons = screen.getAllByRole('button');
 
     fireEvent.click(buttons[1]);
-    const slides = screen.getAllByRole('img');
+    const slide = screen.getByRole('img');
 
-    expect(slides[0]).toHaveStyle('opacity: 0');
-    expect(slides[1]).toHaveStyle('opacity: 100%');
+    expect(slide).toHaveAttribute('alt', 'hotel image - 2');
   });
 
   it('shows previous slide', () => {
@@ -37,9 +36,9 @@ describe('Carousel Component', () => {
     fireEvent.click(nextButton);
     fireEvent.click(prevButton);
 
-    const slides = screen.getAllByRole('img');
+    const slide = screen.getByRole('img');
 
-    expect(slides[0]).toHaveStyle('opacity: 100%');
+    expect(slide).toHaveAttribute('alt', imagesMock[0].alt);
   });
 
   it('shows first slide when moved out of images rage', () => {
@@ -51,9 +50,9 @@ describe('Carousel Component', () => {
     fireEvent.click(buttons[0]); // show 3rd slide
     fireEvent.click(buttons[0]); // show 1st again
 
-    const slides = screen.getAllByRole('img');
+    const slide = screen.getByRole('img');
 
-    expect(slides[0]).toHaveStyle('opacity: 100%');
+    expect(slide).toHaveAttribute('alt', imagesMock[0].alt);
   });
 
   it('shows last slide when moved out of images rage', () => {
@@ -63,8 +62,8 @@ describe('Carousel Component', () => {
 
     fireEvent.click(prevButton); // show 3rd slide
 
-    const slides = screen.getAllByRole('img');
+    const slide = screen.getByRole('img');
 
-    expect(slides[2]).toHaveStyle('opacity: 100%');
+    expect(slide).toHaveAttribute('alt', imagesMock[2].alt);
   });
 });
